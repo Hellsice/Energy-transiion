@@ -5,7 +5,7 @@ from statistics import median
 
 st.set_page_config(layout="wide", page_title='Dashboard Overheating houses', initial_sidebar_state='expanded')
 # data_main = pd.read_excel('SimulatieInvoerEnComfortResult_v2.xlsx', sheet_name='compleet')
-data_main = pd.read_csv('Streamlit data.csv')
+data_main = pd.read_csv('Streamlit Data.csv')
 
 data_A = data_main.copy()
 data_B = data_main.copy()
