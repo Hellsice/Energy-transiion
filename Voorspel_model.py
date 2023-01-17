@@ -140,7 +140,7 @@ with col2:
 st.header("Parallel coördinaten plot")
 st.markdown('''In een parallel coördinaten plot is het mogelijk om verschillende waardes van variabelen aan en uit te zetten. Dit doe je door op de waardes te klikken.
 Dit laat een balk op die waarde komen, welke je kan uitrekken en inkorten om de selectie te vergroten of te verkleinen.''')
-st.markdown('De kleur van de lijnen geeft de GTO uren aan, hoe donkerder de lijn hoe lager de GTO uren en hoe lichter de lijn hoe hoger de GTO uren.')
+st.markdown('De kleur van de lijnen geeft de GTO uren aan, hoe roder de lijn hoe lager de GTO uren en hoe paarser de lijn hoe hoger de GTO uren.')
 st.markdown('Hieronder een tabel met beschrijvingen van de verschillende eigenschappen')
 st.write(description.style.applymap(left_align).to_html(), unsafe_allow_html=True)
 HtmlFile = open("file.html", 'r', encoding='utf-8')
