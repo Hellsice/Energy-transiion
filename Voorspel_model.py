@@ -6,8 +6,8 @@ from statistics import median
 st.set_page_config(layout="wide", page_title='Dashboard Overheating houses', initial_sidebar_state='expanded')
 # data_main = pd.read_excel('SimulatieInvoerEnComfortResult_v2.xlsx', sheet_name='compleet')
 
-# data_main = pd.read_csv('Streamlit Data.csv')
-data_main = pd.read_csv('Streamlit_data.csv')
+data_main = pd.read_csv('Streamlit Data.csv')
+# data_main = pd.read_csv('Streamlit_data.csv')
 
 data_A = data_main.copy()
 data_B = data_main.copy()
@@ -79,11 +79,11 @@ with col1:
             data_A = data_A
         else:
             data_A = data_A[data_A['Klimaatbestand']== Klimaatbestand1]
-        kamer1 = st.selectbox('Selecteer Kamer', ['Weet ik niet'] + list(data_main['Ruimtetype'].unique()))
-        if kamer1 == 'Weet ik niet':
-            data_A = data_A
-        else:
-            data_A = data_A[data_A['Ruimtetype']== kamer1]
+#         kamer1 = st.selectbox('Selecteer Kamer', ['Weet ik niet'] + list(data_main['Ruimtetype'].unique()))
+#         if kamer1 == 'Weet ik niet':
+#             data_A = data_A
+#         else:
+#             data_A = data_A[data_A['Ruimtetype']== kamer1]
         st.markdown('Minimale GTO uren: ' + str(data_A['GTO'].min()))
         st.markdown('Maximale GTO uren: ' + str(data_A['GTO'].max()))
         st.markdown('Verschil tussen min en max: ' + str(data_A['GTO'].max()-data_A['GTO'].min()))
@@ -139,11 +139,11 @@ with col2:
             data_B = data_B
         else:
             data_B = data_B[data_B['Klimaatbestand']== Klimaatbestand2]
-        kamer2 = st.selectbox('Selecteer Kamer', ['Weet ik niet'] + list(data_main['Ruimtetype'].unique()), key=10)
-        if kamer2 == 'Weet ik niet':
-            data_A = data_A
-        else:
-            data_A = data_A[data_A['Ruimtetype']== kamer2]
+#         kamer2 = st.selectbox('Selecteer Kamer', ['Weet ik niet'] + list(data_main['Ruimtetype'].unique()), key=10)
+#         if kamer2 == 'Weet ik niet':
+#             data_A = data_A
+#         else:
+#             data_A = data_A[data_A['Ruimtetype']== kamer2]
         st.markdown('Minimale GTO uren: ' + str(data_B['GTO'].min()))
         st.markdown('Maximale GTO uren: ' + str(data_B['GTO'].max()))
         st.markdown('Verschil tussen min en max: ' + str(data_B['GTO'].max()-data_B['GTO'].min()))
