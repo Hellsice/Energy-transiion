@@ -21,17 +21,19 @@ description = pd.DataFrame({'Eigenschap':['Glaspercentage', 'g-waarde glas', 'Is
 'Isolatie/Infiltratie geeft de kwaliteit van uw isolatie/infiltratie aan', 
 'Oriëntatie is de richting waarop het huis staat.',
 "Spuiventilatie geeft de manier van het huis ventileren aan. Hier zijn de keuzes overdag ventileren, 's nachts ventileren of volgens de TO-juli standaard ventileren.",
-'Klimaatbestand geeft de plaatsing van het huis aan. Hierin is 1 het platteland, 2 de stad en 3 het platteland 10 jaar in de toekomst.',
+'Klimaatbestand geeft de plaatsing van het huis aan. Hierin is 1 het dorp, 2 de stad en 3 het dorp 10 jaar in de toekomst.',
 'Zonwering beschrijft hoe het huis tegen de zon wordt beschermd.',
 'Woningtype geeft het type woning aan waar u in woont']}).set_index('Eigenschap')
 description.columns.name = description.index.name
 description.index.name = None
 
-
+st.title('Bereken de GTO uren van uw huidige woonsituatie en een gewenste woonsituatie')
+st.markdown('GTO uren zijn het aantal uren dat de temperatuur van uw huis boven 25 graden Celcius is')
 col1, col2 = st.columns([1,1])
 with col1:
     with st.form(key='my_form'):
         commit = st.form_submit_button('Submit')
+        st.markdown('Huidige Situatie')
         Glaspercentage1 = st.selectbox('Selecteer Glaspercentage', ['Weet ik niet'] + list(data_main['Glaspercentage'].unique()))
         if Glaspercentage1 == 'Weet ik niet':
             data_A = data_A
@@ -92,6 +94,7 @@ with col1:
 with col2:
     with st.form(key='my_form2'):
         commit = st.form_submit_button('Submit')
+        st.markdown('Gewenste situatie')
         Glaspercentage2 = st.selectbox('Selecteer Glaspercentage', ['Weet ik niet'] + list(data_main['Glaspercentage'].unique()), key=2)
         if Glaspercentage2 == 'Weet ik niet':
             data_B = data_B
